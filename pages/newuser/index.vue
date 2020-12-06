@@ -42,15 +42,9 @@ import ShoppingCart from '@/components/ShoppingCart'
           'Cüzdan',
           'Gözlük',
           'Anahtarlık',          
-          'Defter',
-          'Kalem',
-          'Çorap',
-          'Çanta',
-          'Macbook Kılıfları',
+          'Defter',                
           'Bere',
-          'Ayakkabı'
-
-        ],    
+           ],    
            drawer: null,
     
   }),

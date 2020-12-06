@@ -43,19 +43,13 @@ import Products from '@/components/Products.vue'
        this.$store.dispatch("setPosts",this.fetchedPosts)
   },
     data: () => ({
-         menuitems: [
+             menuitems: [
           'Cüzdan',
           'Gözlük',
           'Anahtarlık',          
-          'Defter',
-          'Kalem',
-          'Çorap',
-          'Çanta',
-          'Macbook Kılıfları',
+          'Defter',                
           'Bere',
-          'Ayakkabı'
-
-        ],   
+           ],    
            drawer: null,
             fetchedPosts : [
     {id:1,title:"bere",price:100,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2268copy_1024x1024.jpg?v=1602688845"},

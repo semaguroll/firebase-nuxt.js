@@ -85,19 +85,13 @@ import ShoppingCart from '@/components/ShoppingCart'
 
   },
     data: () => ({
-        menuitems: [
+            menuitems: [
           'Cüzdan',
           'Gözlük',
           'Anahtarlık',          
-          'Defter',
-          'Kalem',
-          'Çorap',
-          'Çanta',
-          'Macbook Kılıfları',
+          'Defter',                
           'Bere',
-          'Ayakkabı'
-
-        ],    
+           ],       
            drawer: null,
     
   }),
