@@ -7,8 +7,8 @@ const _posts = [
   {id:6,title:"Bey Yün Bere Kırmızı",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2240copy_1024x1024.jpg?v=1602752143"},
   {id:7,title:"Bey Yün Bere Sarı",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2256copy_1024x1024.jpg?v=1602752167"},
   {id:8,title:"Bey Yün Bere Koyu Yeşil",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2223copy_1024x1024.jpg?v=1602752014"},
-   {id:8,title:"Bey Yün Bere Koyu Kahve",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2231copy_1024x1024.jpg?v=1602755362"},
-    {id:8,title:"Bordo Kaşe Şapka",price:250,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2223copy_1024x1024.jpg?v=1602752014"}
+   {id:9,title:"Bey Yün Bere Koyu Kahve",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2231copy_1024x1024.jpg?v=1602755362"},
+    {id:10,title:"Bordo Kaşe Şapka",price:250,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/enes4_1024x1024.jpg?v=1606732609"}
 ]
 
 
