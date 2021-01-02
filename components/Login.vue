@@ -8,9 +8,9 @@
             <div class="text-center">
               <h2 class="font-weight-light mt-10">Giriş</h2>
               <p class="mb-10">______</p>
-              <v-text-field type="email" v-model="eposta" :rules="epostaRules" background-color="white" outlined dense label="E-Posta" required />
+             <v-text-field type="email" v-model="eposta" :rules="epostaRules" background-color="white" outlined dense label="E-Posta" required />
               <v-text-field  v-model="sifre" type="password" :rules="sifreRules" background-color="white" outlined dense label="Şifre" required/> 
-              <nuxt-link to="/signin" type="submit" style="fontSize:14px; background-color:black; color:white; round-0; width:350px">GİRİŞ</nuxt-link>
+             <nuxt-link to="/signin" type="submit" style="fontSize:14px; background-color:black; color:white; round-0; width:350px">GİRİŞ</nuxt-link>
               <div class="d-flex flex-column mt-7">
                 <nuxt-link to="/newuser" tag="button" style="text-transform:none; text-width-light" text small>Yeni Üyelik</nuxt-link> 
                  <nuxt-link to="/" tag="button" style="text-transform:none; text-width-light" text small>Ana Sayfa</nuxt-link> 
