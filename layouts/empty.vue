@@ -1,6 +1,6 @@
 <template>
   <div> 
-      <TopMenu/>  
+    <TopMenu/>  
     <Nuxt />
    
 

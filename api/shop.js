@@ -1,4 +1,4 @@
-const _posts = [
+const _fetchedPosts = [
   {id:1,title:"Bey Yün Bere Açık Kahve",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2268copy_1024x1024.jpg?v=1602688845"},
   {id:2,title:"Bey Yün Bere Açık Yeşil",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2260copy_1024x1024.jpg?v=1602689425"},
   {id:3,title:"Bey Yün Bere Somon ",price:150,stock:20,image:"https://cdn.shopify.com/s/files/1/1432/5782/products/BeyKarakoy2247copy_1024x1024.jpg?v=1602752199"},
@@ -13,11 +13,11 @@ const _posts = [
 
 
 export default {
-    getProducts (cb) {
-      setTimeout(() => cb(_posts), 100)
+    getPostss (cb) {
+      setTimeout(() => cb(_fetchedPosts), 100)
     },
   
-    buyProducts (posts, cb, errorCb) {
+    buyProducts (fetchedPosts, cb, errorCb) {
       setTimeout(() => {
         // simulate random checkout failure.
         (Math.random() > 0.5 || navigator.webdriver)
