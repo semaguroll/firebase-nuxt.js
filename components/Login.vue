@@ -40,11 +40,10 @@ import "firebase/auth"
               // }
               // else{
               //   console.log("olmadı")
-              // }
-               
+              // }     
                    
              
-            //this.$router.push('/signin')
+            this.$router.push('/signin')
                 
     },
   

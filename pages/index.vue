@@ -21,7 +21,7 @@
                     <v-combobox class="styleDiv" width="50px" value="ÜST"></v-combobox>
                     <v-combobox class="styleDiv" value="ALT"></v-combobox>  
                     <v-combobox class="styleDiv" :items="menuitems" value="DİĞER"></v-combobox>   
-                    <v-btn @click="controlAuth()" style="padding:0 !important" text > <v-icon>mdi-account</v-icon></v-btn> 
+                    <nuxt-link  to="/login" tag="button" style="padding:0 !important" text > <v-icon>mdi-account</v-icon></nuxt-link> 
                      <nuxt-link  to="/products" tag="button" style="padding:0 !important" text > <v-icon>mdi-shopping</v-icon></nuxt-link>   
                     <!-- <nuxt-link to="/box" tag="button" style="padding:0 !important" text > <v-icon>mdi-shopping</v-icon></nuxt-link>         -->
                  <v-btn  class="mt-4" dark @click.stop="drawer = !drawer"  style="padding:0 !important" text  >  <v-icon>mdi-shopping</v-icon> </v-btn>
@@ -61,10 +61,10 @@ import "firebase/auth"
 
     },
     methods:{
-       controlAuth(){              
+       controlAuth(){         
              
                 
-              if(firebase.auth().currentUser){
+              if(this.dataa){
               console.log("oldu")
               }
               else{
@@ -74,6 +74,12 @@ import "firebase/auth"
                    
        }
     },
+    
+      computed:{
+       dataa () {
+      return firebase.auth().currentUser.email
+  }
+},
   //    created(){
   //      this.$store.dispatch("setPosts",this.fetchedPosts)
   // },
