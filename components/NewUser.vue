@@ -12,7 +12,7 @@
               <v-text-field  v-model="soyisim" :rules="soyisimRules" background-color="white" outlined dense label="Soyadınız" required />
               <v-text-field type="email" v-model="eposta" :rules="epostaRules" background-color="white" outlined dense label="E-Posta" required />
               <v-text-field v-model="sifre" type="password" :rules="sifreRules" background-color="white" outlined dense label="Şifre" required/>
-              <nuxt-link to="/signin" type="submit" style="fontSize:14px; background-color:black; color:white; round-0; width:350px; ">OLUŞTUR!</nuxt-link>
+              <v-btn type="submit" style="fontSize:14px; background-color:black; color:white; round-0; width:350px; ">OLUŞTUR!</v-btn>
               <div class="d-flex flex-column mt-7">
                    <nuxt-link to="/" tag="button" style="text-transform:none; text-width-light" text small>Ana Sayfaya Geri Dön!</nuxt-link> 
                  
@@ -45,8 +45,9 @@ import "firebase/auth"
   export default {
    methods:{
         async pressed(){
-           const user= firebase.auth().createUserWithEmailAndPassword(this.eposta,this.sifre)
+           const user= firebase.auth().createUserWithEmailAndPassword(this.eposta,this.sifre)           
            console.log(user)
+            this.$router.push('/signin')
          }
     },
 
@@ -60,7 +61,7 @@ import "firebase/auth"
        sifre: '',
       sifreRules: [
         v => !!v || 'Şifre giriniz.',
-        v => (v && v.length <= 8) || 'Şifre 8 karakterden fazla olmalıdır.',
+        v => (v && v.length >= 6) || 'Şifre 6 karakterden fazla olmalıdır.',
       ],
       isim: '',
       isimRules: [

@@ -5,7 +5,7 @@
             <span v-if="loggedIn">Yes</span>
             <span v-else>No</span>
         </div>
-        <v-btn to="/login" @click="signOut">Sign Out</v-btn>
+        <v-btn @click="signOut">Sign Out</v-btn>
     </v-app>
 </template>
 <script>
@@ -19,14 +19,15 @@ export default {
     },
     methods:{
         async signOut(){
-            const data = await firebase.auth().signOut()
-            console.log(data)
+            const data = await firebase.auth().signOut()            
+                this.$router.push('/login')
         }
     },
     created(){
         firebase.auth().onAuthStateChanged(user =>{
             this.loggedIn= !!user;
         })
+        
     }
 }
 </script>

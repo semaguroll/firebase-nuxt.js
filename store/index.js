@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import shop from '@/api/shop';
 import axios from 'axios'
+import firebase from "firebase/app"
+import "firebase/auth"
+
 
 
 Vue.use(Vuex)
@@ -11,7 +14,11 @@ const createStore = () => {
 return new Vuex.Store({
     state: () => ({
         fetchedPosts:[],
-        fetchedBox:[]
+        fetchedBox:[],
+        auth: {
+            user: null
+          },
+        loggedIn:false
     }),
     getters:{ //computed properties
         getPosts(state){
@@ -21,10 +28,17 @@ return new Vuex.Store({
             return state.fetchedPosts.find(post =>post.id === id)        
         },
         getBox(state){
-            return state.fetchedBox.filter(box => box.id=!null)         
+            return state.fetchedBox.filter(box => box.id=!null)    
             
-      }, 
-     
+        },
+       
+        getUser(state) {
+          return state.auth.user;
+        },
+        getAuth:(state)=>(logged)=>{
+          state.loggedIn =logged 
+          return logged
+      },
        
     },
     actions:{
@@ -37,6 +51,15 @@ return new Vuex.Store({
         //     })
 
         // },
+      setUser({commit}, userData) {
+        commit('setUser', userData)
+      },
+      setAuth({commit}, loggedIn) {
+        commit('setAuth', loggedIn)
+      },
+      setAuthh:(state)=>(logged)=>{
+        return state.loggedIn =logged 
+    },
         firebaseGet(vuexContext){
             return axios.get("https://beykarakoy-default-rtdb.firebaseio.com/posts.json")
             .then(response => {
@@ -84,7 +107,13 @@ return new Vuex.Store({
         setBox(state,box){
             //update products
             state.fetchedBox=box
-        }
+        },
+        setAuth(state, data) {
+          state.loggedIn = data;
+        },
+        setUser(state, userdata) {
+          state.auth.user = userdata;
+        },
     }
 })}
 export default createStore

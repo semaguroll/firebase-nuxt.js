@@ -21,7 +21,7 @@
                     <v-combobox class="styleDiv" width="50px" value="ÜST"></v-combobox>
                     <v-combobox class="styleDiv" value="ALT"></v-combobox>  
                     <v-combobox class="styleDiv" :items="menuitems" value="DİĞER"></v-combobox>   
-                    <nuxt-link to="/login" tag="button" style="padding:0 !important" text > <v-icon>mdi-account</v-icon></nuxt-link> 
+                    <v-btn @click="controlAuth()" style="padding:0 !important" text > <v-icon>mdi-account</v-icon></v-btn> 
                      <nuxt-link  to="/products" tag="button" style="padding:0 !important" text > <v-icon>mdi-shopping</v-icon></nuxt-link>   
                     <!-- <nuxt-link to="/box" tag="button" style="padding:0 !important" text > <v-icon>mdi-shopping</v-icon></nuxt-link>         -->
                  <v-btn  class="mt-4" dark @click.stop="drawer = !drawer"  style="padding:0 !important" text  >  <v-icon>mdi-shopping</v-icon> </v-btn>
@@ -50,12 +50,29 @@
 <script>
 import Products from '@/components/Products.vue'
 import ShoppingCart from '@/components/ShoppingCart'
+import firebase from "firebase/app"
+import "firebase/auth"
+
   export default {
       components:{
        ShoppingCart,
        Products,
    
 
+    },
+    methods:{
+       controlAuth(){              
+             
+                
+              if(firebase.auth().currentUser){
+              console.log("oldu")
+              }
+              else{
+                console.log("olmadı")
+              }
+               
+                   
+       }
     },
   //    created(){
   //      this.$store.dispatch("setPosts",this.fetchedPosts)
@@ -70,6 +87,7 @@ import ShoppingCart from '@/components/ShoppingCart'
            ],    
       
          drawer: null,
+         loggedIn:false,
       items: 
        [
           {
